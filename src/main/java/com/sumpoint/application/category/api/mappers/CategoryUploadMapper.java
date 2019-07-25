@@ -1,13 +1,13 @@
 package com.sumpoint.application.category.api.mappers;
 
 import com.sumpoint.application.category.api.requests.CategoryUpload;
-import com.sumpoint.application.category.domain.models.Category;
+import com.sumpoint.application.category.core.models.Category;
 
 /**
  * Defines methods to converts with {@link CategoryUpload}
  * to {@link Category} or vice-versa.
  */
-public interface CategoryMapper {
+public interface CategoryUploadMapper {
     /**
      * Converts an instance of {@link CategoryUpload} to {@link Category}.
      * @param categoryUpload An instance of {@link CategoryUpload}.

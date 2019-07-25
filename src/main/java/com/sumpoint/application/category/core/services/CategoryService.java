@@ -1,6 +1,6 @@
-package com.sumpoint.application.category.domain.services;
+package com.sumpoint.application.category.core.services;
 
-import com.sumpoint.application.category.domain.models.Category;
+import com.sumpoint.application.category.core.models.Category;
 
 /**
  * Defines methods to interact with {@link Category}.
@@ -12,9 +12,9 @@ public interface CategoryService {
      */
     void add(Category category);
 
-    /**
-     * Gets an instance of {@link Category} by ID.
-     * @return An instance of {@link Category}.
-     */
-    Category get(int id);
+//    /**
+//     * Gets an instance of {@link Category} by ID.
+//     * @return An instance of {@link Category}.
+//     */
+//    Category get(int id);
 }

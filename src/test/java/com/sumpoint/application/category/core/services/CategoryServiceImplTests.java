@@ -1,41 +1,54 @@
-package com.sumpoint.application.category.domain.services;
+package com.sumpoint.application.category.core.services;
 
-import org.junit.Assert;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.web.server.ResponseStatusException;
+
+import com.sumpoint.application.category.core.mappers.CategoryMapper;
+import com.sumpoint.application.category.core.models.Category;
+import com.sumpoint.application.category.data.entities.CategoryEntity;
+import com.sumpoint.application.category.data.repositories.CategoryRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CategoryServiceImplTests {
+
+    private Category category;
+    private CategoryEntity entity;
+
+    @Mock
+    private CategoryMapper categoryMapper;
+
+    @Mock
+    private CategoryRepository categoryRepository;
+
+    @InjectMocks
+    private CategoryServiceImpl service;
+
     @Before
     public void setUp() {
-
-    }
-
-    @Test
-    public void whenAdd_givenCategory_thenCategoryRepositoryCalled() {
-        Assert.fail();
+        category = new Category();
+        entity = new CategoryEntity();
     }
 
     @Test
     public void whenAdd_givenCategory_thenCategoryMapperCalled() {
-        Assert.fail();
+        service.add(category);
+
+        verify(categoryMapper).fromCategoryToCategoryEntity(category);
     }
 
     @Test
-    public void whenGet_givenId_thenCategoryRepositoryCalled() {
-        Assert.fail();
-    }
+    public void whenAdd_givenCategory_thenCategoryRepositoryCalled() {
+        when(categoryMapper.fromCategoryToCategoryEntity(category)).thenReturn(entity);
 
-    @Test(expected = ResponseStatusException.class)
-    public void whenGet_givenCategoryNotFound_thenResponseStatusException() {
-        Assert.fail();
-    }
+        service.add(category);
 
-    @Test
-    public void whenGet_givenId_thenCategoryMapperCalled() {
-        Assert.fail();
+        verify(categoryRepository).save(entity);
     }
 }

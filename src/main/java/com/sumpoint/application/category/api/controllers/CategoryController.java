@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sumpoint.application.category.api.mappers.CategoryMapper;
+import com.sumpoint.application.category.api.mappers.CategoryUploadMapper;
 import com.sumpoint.application.category.api.requests.CategoryUpload;
-import com.sumpoint.application.category.domain.models.Category;
-import com.sumpoint.application.category.domain.services.CategoryService;
+import com.sumpoint.application.category.core.models.Category;
+import com.sumpoint.application.category.core.services.CategoryService;
 
 /**
  * Defines REST methods to interact with {@link Category}.
@@ -20,15 +20,15 @@ import com.sumpoint.application.category.domain.services.CategoryService;
 public class CategoryController {
 
     private CategoryService categoryService;
-    private CategoryMapper categoryMapper;
+    private CategoryUploadMapper categoryMapper;
 
     /**
      * Creates a new instance of {@link CategoryController}.
      * @param categoryService An instance of {@link CategoryService}.
-     * @param categoryMapper An instance of {@link CategoryMapper}.
+     * @param categoryMapper An instance of {@link CategoryUploadMapper}.
      */
     public CategoryController(CategoryService categoryService,
-            CategoryMapper categoryMapper) {
+            CategoryUploadMapper categoryMapper) {
         this.categoryService = categoryService;
         this.categoryMapper = categoryMapper;
     }
