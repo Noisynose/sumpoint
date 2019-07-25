@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.sumpoint.application.category.core.mappers.CategoryMapper;
 import com.sumpoint.application.category.core.models.Category;
@@ -16,6 +17,7 @@ import com.sumpoint.application.category.data.entities.CategoryEntity;
 import com.sumpoint.application.category.data.repositories.CategoryRepository;
 
 @RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
 public class CategoryServiceImplTests {
 
     private Category category;

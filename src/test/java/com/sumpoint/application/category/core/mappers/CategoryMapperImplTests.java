@@ -7,11 +7,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.sumpoint.application.category.core.models.Category;
 import com.sumpoint.application.category.data.entities.CategoryEntity;
 
 @RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
 public class CategoryMapperImplTests {
     private final static int AN_ID = 2;
     private final static String A_NAME = "yo";
