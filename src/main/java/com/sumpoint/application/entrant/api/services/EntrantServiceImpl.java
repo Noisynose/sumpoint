@@ -2,12 +2,15 @@ package com.sumpoint.application.entrant.api.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.sumpoint.application.entrant.api.requests.EntrantUpload;
 import com.sumpoint.application.entrant.api.requests.EntrantView;
 
 /**
  * Implements methods to interact with entrants.
  */
+@Component
 public class EntrantServiceImpl implements EntrantService {    
     public EntrantServiceImpl() {
 
